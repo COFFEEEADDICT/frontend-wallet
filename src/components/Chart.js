@@ -14,7 +14,7 @@ class Chart extends Component{
                 labels: [" "],
                 
                 datasets:[{label:"MONTH OVERVIEW",data:[1000,800,1500,0],
-                            backgroundColor:['rgba(133,16,216,0.6)','rgba(122,239,39,0.6)']
+                            backgroundColor:['rgb(59,211,159)']
                 }]
              }
         }
@@ -38,8 +38,8 @@ class Chart extends Component{
 
         <Line
         data={this.state.chartData}
-        width={600}
-        height={800}
+        width={700}
+        height={600}
         options={{
             maintainAspectRatio: false ,
             title:{

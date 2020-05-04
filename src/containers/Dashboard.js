@@ -1,6 +1,8 @@
 import React, { Component } from "react";
  
 import Chart from '../components/Chart';
+import Form from '../components/Form';
+
  
 import "../css/dashboard.css";
  
@@ -28,18 +30,23 @@ class Dashboard extends Component {
     return (
       <div className="dashboard" >
         
-        <div className="chartFix">
+        {/* <div className="chartFix">
         <h1>Welcome back</h1>
-        </div>
+        </div> */}
 
         <br></br>
 
         <div className="chartFix">
-        <p>Price of a ₿itcoin £{this.state.coin.slice(0, -5)} - Last updated on{" "}{this.state.updateTime}
+        <p>Price per ₿itcoin £{this.state.coin.slice(0, -5)} - Last updated on{" "}{this.state.updateTime}
         </p>     
         </div>
-      
+        
        <Chart />
+
+       <div className="chartFix">
+       <Form />
+       </div>
+
        </div>
     );
   }
