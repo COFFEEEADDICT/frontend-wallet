@@ -26,13 +26,19 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div className="dashboard">
-        <h1>Welcome back {}!</h1>
+      <div className="dashboard" >
+        
+        <div className="chartFix">
+        <h1>Welcome back</h1>
+        </div>
 
-        <p>
-          ₿itcoin £{this.state.coin.slice(0, -5)} - Last updated on{" "}
-          {this.state.updateTime}
-        </p>
+        <br></br>
+
+        <div className="chartFix">
+        <p>Price of a ₿itcoin £{this.state.coin.slice(0, -5)} - Last updated on{" "}{this.state.updateTime}
+        </p>     
+        </div>
+      
        <Chart />
        </div>
     );
