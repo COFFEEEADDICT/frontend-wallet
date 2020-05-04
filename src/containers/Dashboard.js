@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Chart from '../components/Chart';
 
 const API = "https://api.coindesk.com/v1/bpi/currentprice/GBP.json";
  
@@ -30,7 +31,7 @@ const API = "https://api.coindesk.com/v1/bpi/currentprice/GBP.json";
         <p>
         ₿itcoin £{this.state.coin.slice(0,-5)} - Last updated on {this.state.updateTime}
         </p>
-
+      <Chart />
       </div>
     ); 
   }
