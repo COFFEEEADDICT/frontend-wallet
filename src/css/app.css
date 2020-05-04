@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -51,6 +57,11 @@
   justify-content: space-around;
   font-size: 1.3rem;
   font-weight: 100;
+  margin-top: 2rem;
+}
+
+.app nav h5 span {
+  color: rgb(59, 155, 30);
 }
 
 .app nav ul {
@@ -69,19 +80,140 @@
 /* auth section */
 
 .auth {
-  display: flex;
+  font-family: "Poppins", sans-serif;
+}
+
+.wave {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.auth-container {
   width: 100%;
-  justify-content: space-around;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5rem;
+  padding: 0 2rem;
+}
+
+.img {
+  display: flex;
+  height: 30rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.img img {
+  width: 35rem;
+  margin-top: 5rem;
 }
 
 .login,
 .signup {
   display: flex;
-  width: 40%;
-  padding: 2rem;
-  margin: 2rem;
-  flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  width: 25rem;
+  margin-top: 1rem;
+}
+
+form h3 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  color: #333;
+  font-weight: 100;
+}
+
+.avatar {
+  width: 8rem;
+}
+
+.input-box {
+  display: grid;
+  grid-template-columns: 7% 93%;
+  margin: 2rem 0;
+  padding: 1rem 0;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.input-box.one {
+  margin-top: 0;
+}
+
+.input-box.two {
+  margin-bottom: 4px;
+}
+
+.input-image {
+  display: flex;
   justify-content: center;
-  outline: 1px solid black;
+  align-items: center;
+}
+
+.input-image i {
+  color: #d9d9d9;
+}
+
+.input-box > div {
+  position: relative;
+  height: 2rem;
+}
+
+.input-box > div label {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0 0.5rem 0.7rem;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  color: #555;
+}
+
+.sub-btn {
+  padding: 0.5rem 1rem;
+  margin: 2rem;
+  font-size: 0.8rem;
+  border: 1px solid #999;
+  border-radius: 2rem;
+}
+
+.sub-btn:hover {
+  border: 1px solid rgb(59, 155, 30);
+}
+
+.toggle span {
+  border-bottom: 1px solid #999;
+}
+
+.toggle span:hover {
+  border-bottom: 1px solid black;
+  cursor: pointer;
 }

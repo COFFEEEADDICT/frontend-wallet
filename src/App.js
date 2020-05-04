@@ -71,7 +71,9 @@ class App extends Component {
       <Router>
         <div className="app">
           <nav>
-            <h5>Wallet</h5>
+            <h5>
+              Wallet <span>App</span>
+            </h5>
             <ul>
               <li>
                 <Link to="/">Dashboard</Link>
