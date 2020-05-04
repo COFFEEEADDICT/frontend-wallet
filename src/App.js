@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Auth from "./containers/Auth";
 import Dashboard from "./containers/Dashboard";
+import Transactions from "./containers/Transactions";
 import "./css/app.css";
 
 class App extends Component {
@@ -53,7 +54,11 @@ class App extends Component {
         if (user.length == 1) {
           this.setState({
             signedIn: true,
-            user: { name: user.name, email: user.email, balance: user.balance },
+            user: {
+              name: user[0].name,
+              email: user[0].email,
+              balance: user[0].balance,
+            },
           });
         }
       });
@@ -79,6 +84,11 @@ class App extends Component {
                 <Link to="/">Dashboard</Link>
               </li>
               {this.state.signedIn ? (
+                <li>
+                  <Link to="/transactions">Transactions</Link>
+                </li>
+              ) : null}
+              {this.state.signedIn ? (
                 <li onClick={this.handleSignOut}>
                   <a href="#">Sign Out</a>
                 </li>
@@ -96,6 +106,9 @@ class App extends Component {
                 handleSignup={this.handleSignup}
                 handleChange={this.handleChange}
               />
+            </Route>
+            <Route path="/transactions">
+              <Transactions user={this.state.user} />
             </Route>
             <Route path="/">
               <Dashboard
