@@ -65,3 +65,23 @@
   text-decoration: none;
   color: black;
 }
+
+/* auth section */
+
+.auth {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.login,
+.signup {
+  display: flex;
+  width: 40%;
+  padding: 2rem;
+  margin: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  outline: 1px solid black;
+}

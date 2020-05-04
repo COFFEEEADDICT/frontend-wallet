@@ -1,40 +1,41 @@
 import React, { Component } from "react";
+ 
 import Chart from '../components/Chart';
-
-const API = "https://api.coindesk.com/v1/bpi/currentprice/GBP.json";
+ 
+import "../css/dashboard.css";
  
 
-  class Dashboard extends Component{
-    
-      state={
-        coin:"",
-        updateTime:""
-      } 
-    
+const API = "https://api.coindesk.com/v1/bpi/currentprice/GBP.json";
 
-  componentDidMount(){
-      fetch(API)
-      .then(res => res.json())
-      .then(data => this.setState( { coin : data.bpi.GBP.rate, updateTime : data.time.updateduk } ))
-    }
+class Dashboard extends Component {
+  state = {
+    coin: "",
+    updateTime: "",
+  };
 
-    
-  render(){
-  
-    return (
-      <div>
-        
-        <h1>
-        Welcome back { }
-        </h1> 
-        
-        <p>
-        ₿itcoin £{this.state.coin.slice(0,-5)} - Last updated on {this.state.updateTime}
-        </p>
-      <Chart />
-      </div>
-    ); 
+  componentDidMount() {
+    fetch(API)
+      .then((res) => res.json())
+      .then((data) =>
+        this.setState({
+          coin: data.bpi.GBP.rate,
+          updateTime: data.time.updateduk,
+        })
+      );
   }
 
+  render() {
+    return (
+      <div className="dashboard">
+        <h1>Welcome back {}!</h1>
+
+        <p>
+          ₿itcoin £{this.state.coin.slice(0, -5)} - Last updated on{" "}
+          {this.state.updateTime}
+        </p>
+       <Chart />
+       </div>
+    );
+  }
 }
 export default Dashboard;
