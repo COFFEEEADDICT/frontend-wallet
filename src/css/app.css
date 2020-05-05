@@ -48,6 +48,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .app nav {
@@ -61,11 +62,7 @@
 }
 
 .app nav h5 span {
-<<<<<<< HEAD
   color: rgb(59, 211, 159);
-=======
-  color: rgb(59,211,159);
->>>>>>> a597a80168ae33b84a1750a024fbb7b1baec94f9
 }
 
 .app nav ul {
@@ -168,7 +165,7 @@ form h3 {
 }
 
 .input-image i {
-  color: rgb(59,211,159);
+  color: rgb(59, 211, 159);
 }
 
 .input-box > div {
@@ -198,30 +195,28 @@ form h3 {
   padding: 0 0.5rem 0.7rem;
   font-size: 1.2rem;
   font-family: "Poppins", sans-serif;
-  color: rgb(59,211,159);
+  color: rgb(59, 211, 159);
 }
 
 .sub-btn {
   padding: 0.5rem 1rem;
   margin: 2rem;
+  display: inline-block;
   font-size: 0.8rem;
   border: 1px solid #999;
   border-radius: 2rem;
+  text-decoration: none;
+  color: black;
 }
 
 .sub-btn:hover {
-<<<<<<< HEAD
   border: 1px solid rgb(59, 211, 159);
-=======
-  border: 1px solid rgb(59,211,159);
->>>>>>> a597a80168ae33b84a1750a024fbb7b1baec94f9
 }
 
 .toggle span {
   border-bottom: 1px solid #999;
-}s
-
-.toggle span:hover {
+}
+s .toggle span:hover {
   border-bottom: 1px solid black;
   cursor: pointer;
 }

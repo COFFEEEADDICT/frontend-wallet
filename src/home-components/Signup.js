@@ -1,5 +1,6 @@
 import React from "react";
 import AVATAR from "../images/avatar.svg";
+import { Link } from "react-router-dom";
 
 const Signup = (props) => {
   return (
@@ -49,15 +50,15 @@ const Signup = (props) => {
             />
           </div>
         </div>
-        <button
+        <Link
+          to="/"
           className="sub-btn"
           onClick={(e) => {
-            e.preventDefault();
             props.handleSignup();
           }}
         >
           Submit
-        </button>
+        </Link>
         <p className="toggle">
           Have an account already? Log in
           <span onClick={props.toggleForm}> Here</span>

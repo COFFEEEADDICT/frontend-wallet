@@ -28,14 +28,13 @@ class App extends Component {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        name: this.state.name,
-        email: this.state.email,
-        password: this.state.password,
+        name: this.state.name.trim(),
+        email: this.state.email.trim(),
+        password: this.state.password.trim(),
       }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         this.setState({
           signedIn: true,
           user: { name: data.name, email: data.email, balance: data.balance },
@@ -50,7 +49,6 @@ class App extends Component {
         const user = data.filter(
           (u) => u.name == this.state.name && u.password == this.state.password
         );
-        console.log(user);
         if (user.length == 1) {
           this.setState({
             signedIn: true,
@@ -92,7 +90,7 @@ class App extends Component {
               ) : null}
               {this.state.signedIn ? (
                 <li onClick={this.handleSignOut}>
-                  <a href="#">Sign Out</a>
+                  <a href="/login">Sign Out</a>
                 </li>
               ) : (
                 <li>
