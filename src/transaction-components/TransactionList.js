@@ -9,7 +9,8 @@ const TransactionList = (props) => {
             <th>Type</th>
             <th>Date</th>
             <th>Amount</th>
-            <th>Name</th>
+            <th>User</th>
+            <th>Direction</th>
           </tr>
         </thead>
         <tbody>{props.renderTransactions()}</tbody>

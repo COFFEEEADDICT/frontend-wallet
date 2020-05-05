@@ -14,8 +14,20 @@ class App extends Component {
       name: "",
       email: "",
       password: "",
+      users: [],
+      currencies: [],
     };
   }
+
+  componentDidMount() {
+    this.fetchCurrencies();
+  }
+
+  fetchCurrencies = () => {
+    fetch("http://localhost:3000/currencies")
+      .then((res) => res.json())
+      .then((data) => this.setState({ currencies: data }));
+  };
 
   handleChange = (e) => {
     this.setState({
@@ -37,7 +49,13 @@ class App extends Component {
       .then((data) => {
         this.setState({
           signedIn: true,
-          user: { name: data.name, email: data.email, balance: data.balance },
+          user: {
+            id: data.id,
+            name: data.name.charAt(0).toUpperCase() + data.name.slice(1),
+            email: data.email,
+            balance: data.balance,
+          },
+          users: data,
         });
       });
   };
@@ -53,12 +71,14 @@ class App extends Component {
           this.setState({
             signedIn: true,
             user: {
+              id: data.id,
               name:
                 user[0].name.charAt(0).toUpperCase() + user[0].name.slice(1),
               email: user[0].email,
               balance: user[0].balance,
               transactions: user[0].transactions,
             },
+            users: data,
           });
         }
       });
@@ -108,7 +128,11 @@ class App extends Component {
               />
             </Route>
             <Route path="/transactions">
-              <Transactions user={this.state.user} />
+              <Transactions
+                currencies={this.state.currencies}
+                users={this.state.users}
+                user={this.state.user}
+              />
             </Route>
             <Route path="/">
               <Dashboard

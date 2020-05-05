@@ -38,17 +38,25 @@ class Transactions extends Component {
     });
   };
 
+  findUser = (id) => {
+    return this.props.users.filter((u) => u.id == id)[0].name;
+  };
+
+  findCurrency = (id) => {
+    console.log(id);
+    return this.props.currencies.filter((c) => c.id == id)[0].name;
+  };
+
   renderTransactions = () => {
     if (this.state.user != null) {
       return this.state.user.transactions.map((t) => {
         return (
           <tr onClick={(e) => this.openModal(t)} className="t-card">
-            <td>
-              <i className="fas fa-lock"></i>
-            </td>
+            <td>{this.findCurrency(t.currency_id)}</td>
             <td>{t.date.slice(0, -14)}</td>
             <td>{t.amount} </td>
-            <td>Ben </td>
+            <td>{this.findUser(t.user_id)}</td>
+            <td>{t.status.charAt(0).toUpperCase() + t.status.slice(1)}</td>
           </tr>
         );
       });
