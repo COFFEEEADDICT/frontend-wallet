@@ -13,6 +13,9 @@ class Dashboard extends Component {
   state = {
     coin: "",
     updateTime: "",
+    amount: 0,
+    message:  "",
+    currency: "",
   };
 
   componentDidMount() {
