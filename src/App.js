@@ -55,9 +55,11 @@ class App extends Component {
           this.setState({
             signedIn: true,
             user: {
-              name: user[0].name,
+              name:
+                user[0].name.charAt(0).toUpperCase() + user[0].name.slice(1),
               email: user[0].email,
               balance: user[0].balance,
+              transactions: user[0].transactions,
             },
           });
         }

@@ -1,0 +1,97 @@
+.transactions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.transactions h2 {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.t-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.filter {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: right;
+}
+
+.filter h3 {
+  margin: 1rem;
+}
+
+/* filter section  */
+
+.select {
+  width: 5rem;
+  height: 2rem;
+  padding: 1rem 2rem;
+  color: #333333;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.select:focus,
+.select:hover {
+  outline: none;
+  border: 1px solid rgb(59, 211, 159);
+}
+
+/* table section */
+
+.transaction-list {
+  width: 60%;
+}
+
+.t-table {
+  min-width: 40rem;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 1rem;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
+}
+
+.t-head tr {
+  background-color: rgb(59, 211, 159);
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.t-table th,
+.t-table td {
+  padding: 1rem 1.5rem;
+}
+
+.t-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.t-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.t-table tbody tr:last-of-type {
+  border-bottom: 2px solid rgb(59, 211, 159);
+}
+
+.t-table tbody tr.active-row {
+  font-weight: bold;
+  color: rgb(59, 211, 159);
+}

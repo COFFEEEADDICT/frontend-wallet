@@ -61,7 +61,7 @@
 }
 
 .app nav h5 span {
-  color: rgb(59, 155, 30);
+  color: rgb(59, 211, 159);
 }
 
 .app nav ul {
@@ -206,7 +206,7 @@ form h3 {
 }
 
 .sub-btn:hover {
-  border: 1px solid rgb(59, 155, 30);
+  border: 1px solid rgb(59, 211, 159);
 }
 
 .toggle span {
