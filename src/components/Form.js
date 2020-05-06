@@ -1,12 +1,29 @@
+<<<<<<< HEAD
 import React from "react";
 import Currency from "./Currency";
 import Amount from "./Amount";
 import Message from "./Message";
+=======
+import React from 'react'
+import Currency from './Currency';
+import Amount from './Amount';
+import Message from './Message';
+import NameSelector from './NameSelector';
+
+
+ 
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+>>>>>>> 89cc897234831c97890390eb7f74ec3ea47d746d
 
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
+
+ 
 
 const theme = createMuiTheme({
   palette: {
@@ -26,23 +43,37 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(1),
     },
-  },
-}));
+  }}));
+ 
+  export default function ContainedButtons(props) {
+    const classes = useStyles();
+  
+    const state={
+      id:""
+      }
 
-export default function ContainedButtons() {
-  const classes = useStyles();
+    return(
 
-  return (
-    <div className="dash-form">
-      <Currency />
-      <Amount />
-      <Message />
+        <div>
+            <Currency />
+            <Amount />
 
-      <ThemeProvider theme={theme}>
-        <Button variant="contained" color="primary">
-          Send
-        </Button>
-      </ThemeProvider>
-    </div>
-  );
-}
+            <NameSelector 
+            usersFilter={props.usersFilter} />
+            <Message />
+
+            <ThemeProvider 
+            theme={theme}>
+
+              <Button 
+              variant="contained" 
+              color="primary" 
+              >Send
+              </Button>
+
+            </ThemeProvider>
+
+        </div>
+
+    ) 
+  }
