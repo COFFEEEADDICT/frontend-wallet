@@ -13,7 +13,7 @@ class Chart extends Component{
             chartData:{
                 labels: [" "],
                 
-                datasets:[{label:"MONTH OVERVIEW",data:[1000,800,1500,0],
+                datasets:[{label:"MONTH OVERVIEW",data:[100,1500],
                             backgroundColor:['rgb(59,211,159)']
                 }]
              }

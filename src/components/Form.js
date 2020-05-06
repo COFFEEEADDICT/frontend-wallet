@@ -2,6 +2,7 @@ import React from 'react'
 import Currency from './Currency';
 import Amount from './Amount';
 import Message from './Message';
+import NameSelector from './NameSelector';
 
 
  
@@ -10,6 +11,11 @@ import Button from '@material-ui/core/Button';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 
+
+state={
+  id:"",
+  
+}
 
 const theme = createMuiTheme({
     palette: {
@@ -31,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
  
-  export default function ContainedButtons() {
+  export default function ContainedButtons(props) {
     const classes = useStyles();
   
     return(
@@ -39,8 +45,9 @@ const useStyles = makeStyles((theme) => ({
         <div>
             <Currency />
             <Amount />
+            <NameSelector usersFilter={props.usersFilter} />
             <Message />
-            
+
             <ThemeProvider theme={theme}>
             <Button variant="contained" color="primary" >Send</Button>
             </ThemeProvider>
