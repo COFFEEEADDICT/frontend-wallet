@@ -7,14 +7,18 @@ import "../css/dashboard.css";
 const API = "https://api.coindesk.com/v1/bpi/currentprice/GBP.json";
 
 class Dashboard extends Component {
-  state = {
-    coin: "",
-    updateTime: "",
-    amount: 0,
-    message: "",
-    currency: "",
-  };
 
+  constructor() {
+    super();
+    this.state = {
+      coin: "",
+      updateTime: "",
+      amount: 0,
+      message: "",
+      currency: "",
+    };
+  }
+ 
   componentDidMount() {
     fetch(API)
       .then((res) => res.json())
