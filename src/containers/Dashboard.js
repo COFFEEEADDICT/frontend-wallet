@@ -1,14 +1,8 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-=======
  
 import Chart from '../components/Chart';
 import Form from '../components/Form';
 import MenuItem from '@material-ui/core/MenuItem';
->>>>>>> 89cc897234831c97890390eb7f74ec3ea47d746d
-
-import Chart from "../components/Chart";
-import Form from "../components/Form";
 
 import "../css/dashboard.css";
 
@@ -54,12 +48,6 @@ class Dashboard extends Component {
           </p>
           <Chart />
         </div>
-<<<<<<< HEAD
-        <div className="chartFix form">
-          <Form />
-        </div>
-      </div>
-=======
         
        <Chart />
 
@@ -71,7 +59,6 @@ class Dashboard extends Component {
        </div>
 
        </div>
->>>>>>> 89cc897234831c97890390eb7f74ec3ea47d746d
     );
   }
 }
