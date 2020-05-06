@@ -73,7 +73,7 @@ class App extends Component {
           this.setState({
             signedIn: true,
             user: {
-              id: data.id,
+              id: user[0].id,
               name:
                 user[0].name.charAt(0).toUpperCase() + user[0].name.slice(1),
               email: user[0].email,

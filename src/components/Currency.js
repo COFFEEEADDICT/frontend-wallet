@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MultilineTextFields() {
   const classes = useStyles();
-  const [currency, setCurrency] = React.useState('EUR');
+  const [currency, setCurrency] = React.useState('GBP');
 
   const handleChange = (event) => {
     setCurrency(event.target.value);

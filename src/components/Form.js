@@ -12,10 +12,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 
 
-state={
-  id:"",
-  
-}
+ 
 
 const theme = createMuiTheme({
     palette: {
@@ -40,16 +37,29 @@ const useStyles = makeStyles((theme) => ({
   export default function ContainedButtons(props) {
     const classes = useStyles();
   
+    const state={
+      id:""
+      }
+
     return(
 
         <div>
             <Currency />
             <Amount />
-            <NameSelector usersFilter={props.usersFilter} />
+
+            <NameSelector 
+            usersFilter={props.usersFilter} />
             <Message />
 
-            <ThemeProvider theme={theme}>
-            <Button variant="contained" color="primary" >Send</Button>
+            <ThemeProvider 
+            theme={theme}>
+
+              <Button 
+              variant="contained" 
+              color="primary" 
+              >Send
+              </Button>
+
             </ThemeProvider>
 
         </div>

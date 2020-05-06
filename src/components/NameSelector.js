@@ -18,28 +18,25 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleSelect(props) {
   const classes = useStyles();
-  const [age, setAge] = React.useState('');
+  const [name, setName] = React.useState('');
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setName(event.target.value);
   };
 
   return (
     <div>
     
       <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-outlined-label">User</InputLabel>
+        <InputLabel id="demo-simple-select-outlined-label">Users</InputLabel>
         <Select
           labelId="demo-simple-select-outlined-label"
           id="demo-simple-select-outlined"
-          value={age}
+          value={name}
           onChange={handleChange}
-          label="Age"
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-         {props.usersFilter( )}
+          label="name"
+        > 
+         {props.usersFilter()}
         </Select>
       </FormControl>
      
