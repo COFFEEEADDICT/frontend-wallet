@@ -111,20 +111,36 @@
 /* modal */
 
 .modal {
-  width: 100%;
+  width: 60%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   padding: 4rem;
+  outline: 1px solid rgb(59, 211, 159);
+  background-color: white;
+  color: #777;
+}
+
+.modal h2 {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.t-card-content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .modal p {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .modal button {
-  padding: 0.7rem 1.4rem;
+  padding: 0.4rem 1rem;
   border: 1px solid #ddd;
   border-radius: 1rem;
   margin: 1rem;

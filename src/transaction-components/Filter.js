@@ -7,16 +7,8 @@ const Filter = (props) => {
         <label>Currency</label>
         <select className="select" onChange={(e) => props.handleChange(e)}>
           <option value="">All</option>
-          <option value="bitcoin">Bitcoin</option>
-          <option value="ethereum">Ethereum</option>
-        </select>
-      </div>
-      <div className="t-input">
-        <label>User</label>
-        <select className="select">
-          <option disabled selected>
-            User
-          </option>
+          <option value="1">Bitcoin</option>
+          <option value="2">Ethereum</option>
         </select>
       </div>
     </div>
