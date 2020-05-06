@@ -56,7 +56,10 @@ class Dashboard extends Component {
        <Chart />
 
        <div className="chartFix">
-       <Form names={this.state.names} usersFilter={this.usersFilter}/>
+       <Form 
+       names={this.state.names} 
+       usersFilter={this.usersFilter}
+       handleClickSubmit={this.props.handleClickSubmit}/>
        </div>
 
        </div>

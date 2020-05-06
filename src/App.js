@@ -93,6 +93,18 @@ class App extends Component {
     });
   };
 
+ //POST TRANSACTION
+  handleClickSubmit = (event, formData) => {
+    event.preventDefault()
+    fetch("http://localhost:3000/transactions", {
+      method: "POST",
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+  }
+
   render() {
  
     return (
@@ -139,6 +151,7 @@ class App extends Component {
             </Route>
             <Route path="/">
               <Dashboard
+                handleClickSubmit={this.handleClickSubmit}
                 users={this.state.users}
                 signedIn={this.state.signedIn}
                 user={this.state.user}

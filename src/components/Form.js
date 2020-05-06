@@ -37,10 +37,7 @@ const useStyles = makeStyles((theme) => ({
   export default function ContainedButtons(props) {
     const classes = useStyles();
   
-    const state={
-      id:""
-      }
-
+    
     return(
 
         <div>
@@ -57,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
               <Button 
               variant="contained" 
               color="primary" 
+              handleClickSubmit={event => props.handleClickSubmit(event, this.state)}
               >Send
               </Button>
 
