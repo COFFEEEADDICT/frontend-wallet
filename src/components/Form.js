@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Currency from "./Currency";
 import Amount from "./Amount";
 import Message from "./Message";
@@ -22,41 +22,50 @@ const theme = createMuiTheme({
   },
 });
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-  },
-}));
+  
+  class Form extends Component {
 
-export default function ContainedButtons(props) {
-  const classes = useStyles();
+    state={
+      currency:"",
+      amount:0,
+      status:"sent",
+      currency:"",
+      user:""
+    }
+   
+    handleChange = (e) => {
+      this.setState({
+        [e.target.name]: e.target.value,
+      });
+    };
+  
+  render(){ 
+    return (
+      <div className="dash-form">
+        <div className="d-form-item">
+          Currency:
+          <Currency />
+        </div>
+        <div className="d-form-item">
+          <Amount />
+        </div>
+        <div className="d-form-item">
+          <NameSelector usersFilter={this.props.usersFilter} />
+        </div>
+        <div className="d-form-item">
+          <Message />
+        </div>
+        <div className="d-form-btn">
+          <ThemeProvider theme={theme}>
+            <Button variant="contained" color="primary">
+              Send
+            </Button>
+          </ThemeProvider>
+        </div>
+      </div>
+    );
+  };
 
- 
-
-  return (
-    <div className="dash-form">
-      <div className="d-form-item">
-        Currency:
-        <Currency />
-      </div>
-      <div className="d-form-item">
-        <Amount />
-      </div>
-      <div className="d-form-item">
-        <NameSelector usersFilter={props.usersFilter} />
-      </div>
-      <div className="d-form-item">
-        <Message />
-      </div>
-      <div className="d-form-btn">
-        <ThemeProvider theme={theme}>
-          <Button variant="contained" color="primary">
-            Send
-          </Button>
-        </ThemeProvider>
-      </div>
-    </div>
-  );
 }
+
+  export default Form 
