@@ -28,10 +28,40 @@
   align-items: center;
 }
 
-.dash-form {
-  width: 100;
+.d-form {
+  margin-top: 5rem;
   display: flex;
-  height: 40vh;
-  align-items: center;
-  justify-content: center;
+  width: 100;
+  flex-direction: column;
+  text-align: center;
+  background-color: #eee;
+  border-top: 3px solid rgb(59, 211, 159);
+}
+
+.d-form h3 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  font-weight: 200;
+}
+
+.dash-form {
+  padding: 3rem;
+  margin: 3rem;
+  outline: 3px solid rgb(59, 211, 159);
+  width: 100;
+  display: grid;
+  min-height: 40vh;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+.d-form-item {
+  width: 50%;
+  height: 40%;
+  margin: auto;
+}
+
+.d-form-btn {
+  width: 70%;
+  margin: auto;
 }

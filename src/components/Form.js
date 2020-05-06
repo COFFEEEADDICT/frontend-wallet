@@ -1,29 +1,13 @@
-<<<<<<< HEAD
 import React from "react";
 import Currency from "./Currency";
 import Amount from "./Amount";
 import Message from "./Message";
-=======
-import React from 'react'
-import Currency from './Currency';
-import Amount from './Amount';
-import Message from './Message';
-import NameSelector from './NameSelector';
-
-
- 
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
->>>>>>> 89cc897234831c97890390eb7f74ec3ea47d746d
+import NameSelector from "./NameSelector";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
-
- 
 
 const theme = createMuiTheme({
   palette: {
@@ -43,37 +27,38 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(1),
     },
-  }}));
- 
-  export default function ContainedButtons(props) {
-    const classes = useStyles();
-  
-    const state={
-      id:""
-      }
+  },
+}));
 
-    return(
+export default function ContainedButtons(props) {
+  const classes = useStyles();
 
-        <div>
-            <Currency />
-            <Amount />
+  const state = {
+    id: "",
+  };
 
-            <NameSelector 
-            usersFilter={props.usersFilter} />
-            <Message />
-
-            <ThemeProvider 
-            theme={theme}>
-
-              <Button 
-              variant="contained" 
-              color="primary" 
-              >Send
-              </Button>
-
-            </ThemeProvider>
-
-        </div>
-
-    ) 
-  }
+  return (
+    <div className="dash-form">
+      <div className="d-form-item">
+        Currency:
+        <Currency />
+      </div>
+      <div className="d-form-item">
+        <Amount />
+      </div>
+      <div className="d-form-item">
+        <NameSelector usersFilter={props.usersFilter} />
+      </div>
+      <div className="d-form-item">
+        <Message />
+      </div>
+      <div className="d-form-btn">
+        <ThemeProvider theme={theme}>
+          <Button variant="contained" color="primary">
+            Send
+          </Button>
+        </ThemeProvider>
+      </div>
+    </div>
+  );
+}
