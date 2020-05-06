@@ -35,8 +35,6 @@ class App extends Component {
     });
   };
 
- 
-
   handleSignup = () => {
     fetch("http://localhost:3000/users", {
       method: "POST",
@@ -106,7 +104,6 @@ class App extends Component {
   }
 
   render() {
- 
     return (
       <Router>
         <div className="app">
@@ -150,12 +147,19 @@ class App extends Component {
               />
             </Route>
             <Route path="/">
-              <Dashboard
-                handleClickSubmit={this.handleClickSubmit}
-                users={this.state.users}
-                signedIn={this.state.signedIn}
-                user={this.state.user}
-              />
+              {this.state.signedIn ? (
+                <Dashboard
+                  users={this.state.users}
+                  signedIn={this.state.signedIn}
+                  user={this.state.user}
+                />
+              ) : (
+                <Auth
+                  handleLogin={this.handleLogin}
+                  handleSignup={this.handleSignup}
+                  handleChange={this.handleChange}
+                />
+              )}
             </Route>
           </Switch>
         </div>

@@ -2,14 +2,12 @@ import React from "react";
 import Currency from "./Currency";
 import Amount from "./Amount";
 import Message from "./Message";
-import NameSelector from "./NameSelector"
+import NameSelector from "./NameSelector";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
-
- 
 
 const theme = createMuiTheme({
   palette: {
@@ -29,35 +27,36 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(1),
     },
-  }}));
+  },
+}));
+
+export default function ContainedButtons(props) {
+  const classes = useStyles();
+
  
-  export default function ContainedButtons(props) {
-    const classes = useStyles();
-  
-    
-    return(
 
-        <div>
-            <Currency />
-            <Amount />
-
-            <NameSelector 
-            usersFilter={props.usersFilter} />
-            <Message />
-
-            <ThemeProvider 
-            theme={theme}>
-
-              <Button 
-              variant="contained" 
-              color="primary" 
-              handleClickSubmit={event => props.handleClickSubmit(event, this.state)}
-              >Send
-              </Button>
-
-            </ThemeProvider>
-
-        </div>
-
-    ) 
-  }
+  return (
+    <div className="dash-form">
+      <div className="d-form-item">
+        Currency:
+        <Currency />
+      </div>
+      <div className="d-form-item">
+        <Amount />
+      </div>
+      <div className="d-form-item">
+        <NameSelector usersFilter={props.usersFilter} />
+      </div>
+      <div className="d-form-item">
+        <Message />
+      </div>
+      <div className="d-form-btn">
+        <ThemeProvider theme={theme}>
+          <Button variant="contained" color="primary">
+            Send
+          </Button>
+        </ThemeProvider>
+      </div>
+    </div>
+  );
+}
