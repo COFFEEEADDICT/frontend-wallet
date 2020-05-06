@@ -1,10 +1,37 @@
 .dashboard {
-  width: 100%;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.dashboard h1 {
+.dash-head {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 200;
+  margin-top: 2rem;
+}
+
+.d-info {
+  padding: 3rem 5rem;
+  outline: 3px solid rgb(59, 211, 159);
+  text-align: center;
+}
+
+.d-info span {
+  font-weight: bold;
+}
+
+.chart {
+  height: 60vh;
+  width: 80%;
+  margin: 2rem auto 0;
+  display: flex;
+  align-items: center;
+}
+
+.dash-form {
+  width: 100;
+  display: flex;
+  height: 40vh;
+  align-items: center;
+  justify-content: center;
 }

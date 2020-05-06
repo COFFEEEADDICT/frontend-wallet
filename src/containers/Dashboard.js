@@ -1,11 +1,9 @@
 import React, { Component } from "react";
- 
-import Chart from '../components/Chart';
-import Form from '../components/Form';
 
- 
+import Chart from "../components/Chart";
+import Form from "../components/Form";
+
 import "../css/dashboard.css";
- 
 
 const API = "https://api.coindesk.com/v1/bpi/currentprice/GBP.json";
 
@@ -14,7 +12,7 @@ class Dashboard extends Component {
     coin: "",
     updateTime: "",
     amount: 0,
-    message:  "",
+    message: "",
     currency: "",
   };
 
@@ -31,26 +29,20 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div className="dashboard" >
-        
-        {/* <div className="chartFix">
-        <h1>Welcome back</h1>
-        </div> */}
-
-        <br></br>
-
-        <div className="chartFix">
-        <p>Price per ₿itcoin £{this.state.coin.slice(0, -5)} - Last updated on{" "}{this.state.updateTime}
-        </p>     
+      <div className="dashboard">
+        <h2 className="dash-head">Welcome Back!</h2>
+        <div className="chart">
+          <p className="d-info">
+            <span>Price Per ₿itcoin:</span> £{this.state.coin.slice(0, -5)}{" "}
+            <br />
+            <span>Last Updated On:</span> {this.state.updateTime}
+          </p>
+          <Chart />
         </div>
-        
-       <Chart />
-
-       <div className="chartFix">
-       <Form />
-       </div>
-
-       </div>
+        <div className="chartFix form">
+          <Form />
+        </div>
+      </div>
     );
   }
 }
