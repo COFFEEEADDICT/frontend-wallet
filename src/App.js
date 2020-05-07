@@ -67,6 +67,7 @@ class App extends Component {
         const user = data.filter(
           (u) => u.name == this.state.name && u.password == this.state.password
         );
+        console.log(user)
         if (user.length == 1) {
           this.setState({
             signedIn: true,
@@ -152,6 +153,7 @@ class App extends Component {
                   users={this.state.users}
                   signedIn={this.state.signedIn}
                   user={this.state.user}
+                  handleClickSubmit={this.handleClickSubmit}
                 />
               ) : (
                 <Auth

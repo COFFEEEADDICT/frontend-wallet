@@ -53,7 +53,11 @@ class Dashboard extends Component {
 
         <div className="chartFix d-form">
           <h3>Make A Transaction</h3>
-          <Form names={this.state.names} usersFilter={this.usersFilter} />
+          <Form 
+          user={this.props.user}
+          names={this.state.names} 
+          usersFilter={this.usersFilter}
+          handleClickSubmit={this.props.handleClickSubmit}/>
         </div>
       </div>
     );

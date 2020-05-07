@@ -13,8 +13,8 @@ const Login = (props) => {
             <i className="fas fa-user"></i>
           </div>
           <div className="input-field">
-            <label>Username</label>
-            <input
+             <input
+              placeholder="Username"
               className="input"
               onChange={(e) => props.handleChange(e)}
               name="name"
@@ -27,8 +27,9 @@ const Login = (props) => {
             <i className="fas fa-lock"></i>
           </div>
           <div className="input-field">
-            <label>Password</label>
+       
             <input
+              placeholder="Password"
               className="input"
               onChange={(e) => props.handleChange(e)}
               name="password"
